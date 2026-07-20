@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "PDF Lover"
+version = "1.0.0"
+id = "artifacts/pdf-lover"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23818
+
+[services.development]
+run = "pnpm --filter @workspace/pdf-lover run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/pdf-lover", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/pdf-lover/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23818"
+BASE_PATH = "/"

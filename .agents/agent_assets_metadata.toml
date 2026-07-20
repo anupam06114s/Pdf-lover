@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "eZWvNq9OtPlmE-NOc17At"
+uri = "file://pdf-lover-code.zip"
+type = "unspecified"
+title = "PDF Lover — Source Code"
